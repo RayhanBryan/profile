@@ -17,7 +17,6 @@
 
   export default {
     name: 'Home',
-
     components: {
       TheJumbotron,
       AboutMe,

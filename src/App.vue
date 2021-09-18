@@ -6,23 +6,16 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <a href="/">
+          <v-img
+            alt="Logo"
+            class="shrink mr-2"
+            contain
+            src="./assets/img/navbar.png"
+            transition="scale-transition"
+            width="100"
+          />
+        </a>
       </div>
 
       <v-spacer></v-spacer>
@@ -30,7 +23,7 @@
       <v-btn
         v-for="a in subs"
         :key="a"
-        v-scroll-to="{ element:a.tag, offset: -60}"
+        v-scroll-to="{ element:a.tag, offset: -80}"
         text
       >
         <span class="mr-2">{{ a.title }}</span>
@@ -142,5 +135,13 @@ export default {
       },
       ],
   }),
+  watch: {
+      '$route':{
+        handler: (to, from) => {
+          document.title = to.meta.title || 'Your Website'
+        },
+         immediate: true
+      }
+    },
 };
 </script>
